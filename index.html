@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iman dari Hati - Perjalanan Spiritual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #d32f2f;
+            --secondary: #f57c00;
+            --accent: #7b1fa2;
+            --light: #fff3e0;
+            --dark: #5d4037;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #b43c38 0%, #fff3e0 100%);
+        }
+        
+        .heart-gradient {
+            background: linear-gradient(135deg, #d32f2f 0%, #f57c00 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .faith-tab {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        
+        .faith-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .heart-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .scripture-card {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .prayer-circle {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            padding: 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .spiritual-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d32f2f' fill-opacity='0.1'%3E%3Cpath d='M30 20c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .testimonial-card {
+            background: rgb(249, 245, 246);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            color: rgba(211, 47, 47, 0.1);
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Scheherazade New', serif;
+            direction: rtl;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="heart-gradient text-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-white flex items-center">
+                        <i class="fas fa-heart mr-3 text-red-200 heart-pulse"></i>
+                        Iman dari Hati
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#beranda" class="text-white hover:text-red-200 transition">Beranda</a>
+                    <a href="#ibadah" class="text-white hover:text-red-200 transition">Ibadah Hati</a>
+                    <a href="#ayat" class="text-white hover:text-red-200 transition">Ayat Suci</a>
+                    <a href="#doa" class="text-white hover:text-red-200 transition">Doa & Dzikir</a>
+                
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-4">
+                <a href="#beranda" class="block text-white hover:text-red-200">Beranda</a>
+                <a href="#ibadah" class="block text-white hover:text-red-200">Ibadah Hati</a>
+                <a href="#ayat" class="block text-white hover:text-red-200">Ayat Suci</a>
+                <a href="#doa" class="block text-white hover:text-red-200">Doa & Dzikir</a>
+        
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="heart-gradient text-white py-24 spiritual-pattern">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        Iman yang Bersumber <br>
+                        <span class="text-red-200">dari Hati</span>
+                    </h1>
+                    <p class="text-xl mb-8 opacity-90 leading-relaxed">
+                        Temukan kekuatan transformatif iman yang mengalir dari dalam hati. Sebuah perjalanan spiritual penuh cinta, kasih sayang, dan rahmat Ilahi.
+                    </p>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#ibadah" class="bg-white text-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-50 transition transform hover:scale-105">
+                            Mulai Perjalanan
+                        </a>
+                        <a href="#doa" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-red-600 transition">
+                            <i class="fas fa-hands-praying mr-2"></i>Berdoa Sekarang
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="ramddhan.png" alt="Suasana spiritual yang tenang dengan cahaya lembut, tangan terbuka memegang simbol hati, dan sinar cahaya lembut yang melambangkan hubungan dengan Yang Maha Kuasa" class="rounded-2xl shadow-2xl heart-pulse" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ibadah Hati Section -->
+    <section id="ibadah" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-red-700">Ibadah dari Hati</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Kembangkan hubungan personal yang mendalam dengan iman melalui ibadah yang tulus dan praktik spiritual dari hati.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-hover bg-red-50 p-8 rounded-2xl border border-red-200 text-center">
+                    <div class="bg-red-100 p-5 rounded-full w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                        <i class="fas fa-heart text-4xl text-red-600 heart-pulse"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-red-800">Meditasi Cinta</h3>
+                    <p class="text-gray-600 mb-6">Hubungkan diri dengan Yang Maha Kuasa melalui kontemplasi hening dan praktik meditasi dari hati.</p>
+                    <ul class="text-sm text-red-700 space-y-2 mb-6">
+                        <li><i class="fas fa-check-circle mr-2 text-green-600"></i>Praktik ibadah pagi</li>
+                        <li><i class="fas fa-check-circle mr-2 text-green-600"></i>Doa dari hati</li>
+                        <li><i class="fas fa-check-circle mr-2 text-green-600"></i>Kontemplasi hening</li>
+                    </ul>
+                    <a href="#" class="text-red-700 font-semibold hover:text-red-800 transition">
+                        Panduan Praktik →
+                    </a>
+                </div>
+                
+                <div class="card-hover bg-orange-50 p-8 rounded-2xl border border-orange-200 text-center">
+                    <div class="bg-orange-100 p-5 rounded-full w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                        <i class="fas fa-book-open text-4xl text-orange-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-800">Membaca Suci</h3>
+                    <p class="text-gray-600 mb-6">Dalami kitab suci dengan sudut pandang cinta dan kasih sayang untuk pemahaman yang lebih mendalam.</p>
+                    <ul class="text-sm text-orange-700 space-y-2 mb-6">
+                        <li><i class="fas fa-check-circle mr-2 text-green-600"></i>Tadabur Al-Quran</li>
+                        <li><i class="fas fa-check-circle mr-2 text-green-600"></i>Kajian makna mendalam</li>
+                        <li><i class="fas fa-check-circle mr-2 text-green-600"></i>Refleksi personal</li>
+                    </ul>
+                    <a href="#" class="text-orange-700 font-semibold hover:text-orange-800 transition">
+                        Baca Selengkapnya →
+                    </a>
+                </div>
+                
+                <div class="card-hover bg-purple-50 p-8 rounded-2xl border border-purple-200 text-center">
+                    <div class="bg-purple-100 p-5 rounded-full w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                        <i class="fas fa-hands-holding-heart text-4xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-800">Pelayanan Kasih</h3>
+                    <p class="text-gray-600 mb-6">Wujudkan iman melalui pelayanan dan kasih sayang kepada sesama dengan tulus dari hati.</p>
+                    <ul class="text-sm text-purple-700 space-y-2 mb-6">
+                        <li><i class="fas fa-check-circle mr-2 text-green-600"></i>Sedekah dengan ikhlas</li>
+                        <li><i class="fas fa-check-circle mr-2 text-green-600"></i>Menolong sesama</li>
+                        <li><i class="fas fa-check-circle mr-2 text-green-600"></i>Pelayanan komunitas</li>
+                    </ul>
+                    <a href="#" class="text-purple-700 font-semibold hover:text-purple-800 transition">
+                        Mulai Melayani →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ayat Suci Section -->
+    <section id="ayat" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-red-700">Ayat-Ayat Penyejuk Hati</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Renungkan ayat-ayat suci yang memberikan ketenangan, kedamaian, dan kekuatan bagi hati yang beriman.</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="scripture-card">
+                    <div class="text-right mb-6">
+                        <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm">QS. Ar-Ra'd: 28</span>
+                    </div>
+                    <div class="arabic-text text-2xl mb-4 text-gray-800 font-bold">
+                        الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُمْ بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ
+                    </div>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        "(Yaitu) orang-orang yang beriman dan hati mereka menjadi tenteram dengan mengingat Allah. Ingatlah, hanya dengan mengingat Allah hati menjadi tenteram."
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-red-700 font-semibold">Penyejuk Hati</span>
+                        <button class="bg-red-700 text-white px-4 py-2 rounded-full hover:bg-red-800 transition flex items-center">
+                            <i class="fas fa-share-alt mr-2"></i>Bagikan
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="scripture-card">
+                    <div class="text-right mb-6">
+                        <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm">QS. Al-Baqarah: 186</span>
+                    </div>
+                    <div class="arabic-text text-2xl mb-4 text-gray-800 font-bold">
+                        وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ
+                    </div>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        "Dan apabila hamba-hamba-Ku bertanya kepadamu tentang Aku, maka (jawablah) sesungguhnya Aku adalah dekat. Aku mengabulkan doa orang yang berdoa apabila ia berdoa kepada-Ku."
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-orange-700 font-semibold">Kedekatan Ilahi</span>
+                        <button class="bg-orange-700 text-white px-4 py-2 rounded-full hover:bg-orange-800 transition flex items-center">
+                            <i class="fas fa-bookmark mr-2"></i>Simpan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doa & Dzikir Section -->
+    <section id="doa" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-red-700">Doa & Dzikir Hati</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Kumpulan doa dan dzikir untuk mengisi hati dengan ketenangan dan kedekatan dengan Sang Pencipta.</p>
+            
+            <div class="bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-2xl p-12 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <div class="prayer-circle mx-auto mb-8">
+                        <i class="fas fa-hands-praying text-4xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mb-6">Doa Mohon Ketenteraman Hati</h3>
+                    
+                    <div class="arabic-text text-2xl mb-6 leading-relaxed">
+                        اللَّهُمَّ إِنِّي أَسْأَلُكَ نَفْسًا بِكَ مُطْمَئِنَّةً
+                    </div>
+                    
+                    <p class="text-xl mb-8 opacity-90">
+                        "Ya Allah, aku memohon kepada-Mu jiwa yang merasa tenteram dengan-Mu."
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <div class="text-3xl font-bold mb-2">3x</div>
+                            <p>Setiap Pagi</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <div class="text-3xl font-bold mb-2">3x</div>
+                            <p>Setiap Sore</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <div class="text-3xl font-bold mb-2">7x</div>
+                            <p>Saat Gelisah</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        
+                        </div>
+                        <div>
+                         
